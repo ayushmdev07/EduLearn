@@ -1,0 +1,603 @@
+﻿@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    var Uid = HttpContextAccessor.HttpContext.Session.GetInt32("UserId");
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/home/home.css" />
+}
+
+
+<!-- ===== Hero Section ===== -->
+
+<section class="hero position-relative pt-md-5">
+    <div class="container-fluid pt-2">
+        <div class="row align-items-center">
+
+            <!-- Text Column -->
+
+            <div class="col-md-7 ps-5">
+                <h1 class="display-5 fw-bold my-3">
+                    Best online platform for
+                    <span class="text-white px-4 py-2 rounded d-inline-block my-1"
+                          style="background-image: linear-gradient(to right, #24497b, #0076ba, #1521bb);">learning</span>
+                </h1>
+                <p class="text-secondary my-4">
+                    Focused on skill development mainly through offline practice, consistent learning, real
+                    projects, teamwork, and deep understanding; online resources used rarely, only when essential or
+                    supplementary.
+                </p>
+                <div>
+                    <a class="btn btn-primary btn-lg me-3 mb-4" asp-action="Register" asp-controller="Authentication">Join for Free</a>
+                    <a class="btn btn-lg mb-4 heroBtn" asp-action="Services" asp-controller="Services">Learn Now</a>
+                </div>
+            </div>
+
+            <!-- Image Column -->
+
+            <div class="col-md-5 text-center heroBox ps-5 ps-md-0" id="heroImageBox"></div>
+
+
+        </div>
+    </div>
+
+    <!-- Optional Background Overlay -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.05); z-index: -1;">
+    </div>
+</section>
+
+<!-- ===== Courses Section ===== -->
+<section class="pb-2 pt-5 text-center course" id="courses">
+
+    <div class="container-fluid mb-5 px-2 px-sm-4 px-lg-5">
+        <h2 class="fw-bold fs-1">Our Courses</h2>
+        <p class="text-muted pb-4">Here are some of our most popular and in-demand courses.</p>
+        <div class="row g-4 g-lg-5 m-0 p-0">
+
+            <!-- Card 1 -->
+            <div class="col-11 col-sm-10 col-md-6 mx-auto col-lg-5 col-xl-4 " id="web">
+                <div class="card shadow border-0 h-100"
+                     style="border-radius: 15px; overflow: hidden; background: linear-gradient(145deg, #f0f8ff, #e6f3ff); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <img src="~/images/home-images/Full_Stack_Web_Development.png" class="card-img-top" alt="Card image"
+                         style="object-fit: cover; height: 250px;">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-2"
+                            style="background: linear-gradient(to right, #0572b5, #4d187b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            Full Stack Web Development
+                        </h5>
+                        <p class="card-text text-secondary mb-3">
+                            Learn front-end, back-end, databases, and
+                            deployment to build complete, dynamic, and responsive web applications.
+                        </p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a asp-action="Services" asp-controller="Services" class="btn btn-primary text-white px-4 py-1 rounded-5">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-11 col-sm-10 col-md-6 mx-auto col-lg-5 col-xl-4 " id="mobile">
+                <div class="card shadow border-0 h-100"
+                     style="border-radius: 15px; overflow: hidden; background: linear-gradient(145deg, #f0f8ff, #e6f3ff); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <img src="~/images/home-images/Mobile_Application_Development.png" class="card-img-top" alt="Card image"
+                         style="object-fit: cover; height: 250px;">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-2"
+                            style="background: linear-gradient(to right, #0572b5, #4d187b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            Mobile App Development
+                        </h5>
+                        <p class="card-text text-secondary mb-3">
+                            Learn to design, develop, and deploy cross-platform
+                            mobile apps with modern frameworks, UI, and backend integration.
+                        </p>
+                        <p class="card-text"><small class="text-muted">Last updated 5 mins ago</small></p>
+                        <a asp-action="Services" asp-controller="Services" class="btn btn-primary text-white px-4 py-1 rounded-5">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-11 col-sm-10 col-md-6 mx-auto col-lg-5 col-xl-4 " id="backend">
+                <div class="card shadow border-0 h-100"
+                     style="border-radius: 15px; overflow: hidden; background: linear-gradient(145deg, #f0f8ff, #e6f3ff); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <img src="~/images/home-images/backend_Development.png" class="card-img-top" alt="Card image"
+                         style="object-fit: cover; height: 250px;">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-2"
+                            style="background: linear-gradient(to right, #0572b5, #4d187b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            Backend Development
+                        </h5>
+                        <p class="card-text text-secondary mb-3">
+                            Learn server-side programming, databases, APIs, and
+                            deployment to build secure, scalable, and efficient web backends.
+                        </p>
+                        <p class="card-text"><small class="text-muted">Last updated 10 mins ago</small></p>
+                        <a asp-action="Services" asp-controller="Services" class="btn btn-primary text-white px-4 py-1 rounded-5">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Card 4 -->
+            <div class="col-11 col-sm-10 col-md-6 mx-auto col-lg-5 col-xl-4 " id="programming">
+                <div class="card shadow border-0 h-100"
+                     style="border-radius: 15px; overflow: hidden; background: linear-gradient(145deg, #f0f8ff, #e6f3ff); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <img src="~/images/home-images/Programming-Language-Popularity.jpg" class="card-img-top" alt="Card image"
+                         style="object-fit: cover; height: 250px;">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-2"
+                            style="background: linear-gradient(to right, #0572b5, #4d187b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            Programming Languages
+                        </h5>
+                        <p class="card-text text-secondary mb-3">
+                            Learn core programming concepts, logic building,
+                            and syntax to master multiple languages for software development.
+                        </p>
+                        <p class="card-text"><small class="text-muted">Last updated 10 mins ago</small></p>
+                        <a asp-action="Services" asp-controller="Services" class="btn btn-primary text-white px-4 py-1 rounded-5">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col-11 col-sm-10 col-md-6 mx-auto col-lg-5 col-xl-4 " id="hacking">
+                <div class="card shadow border-0 h-100"
+                     style="border-radius: 15px; overflow: hidden; background: linear-gradient(145deg, #f0f8ff, #e6f3ff); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <img src="~/images/home-images/A-Complete-Guide-to-Ethical-Hacking.png" class="card-img-top" alt="Card image"
+                         style="object-fit: cover; height: 250px;">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-2"
+                            style="background: linear-gradient(to right, #0572b5, #4d187b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            Ethical Hacking
+                        </h5>
+                        <p class="card-text text-secondary mb-3">
+                            Learn techniques to identify, exploit, and fix
+                            security vulnerabilities ethically, ensuring systems remain protected.
+                        </p>
+                        <p class="card-text"><small class="text-muted">Last updated 10 mins ago</small></p>
+                        <a asp-action="Services" asp-controller="Services" class="btn btn-primary text-white px-4 py-1 rounded-5">Read More</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col-11 col-sm-10 col-md-6 mx-auto col-lg-5 col-xl-4 " id="data">
+                <div class="card shadow border-0 h-100"
+                     style="border-radius: 15px; overflow: hidden; background: linear-gradient(145deg, #f0f8ff, #e6f3ff); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <img src="~/images/home-images/big-data-analytics-and-business-intelligence-thumbnail.jpg" class="card-img-top" alt="Card image"
+                         style="object-fit: cover; height: 250px;">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-2"
+                            style="background: linear-gradient(to right, #0572b5, #4d187b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            Data Analytics
+                        </h5>
+                        <p class="card-text text-secondary mb-3">
+                            Learn to collect, process, and analyze data using
+                            tools and techniques for informed decision-making.
+                        </p>
+                        <p class="card-text"><small class="text-muted">Last updated 10 mins ago</small></p>
+                        <a asp-action="Services" asp-controller="Services" class="btn btn-primary text-white px-4 py-1 rounded-5">Read More</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Updates Section -->
+<section class="container-fluid px-lg-5 px-sm-3 py-5" id="updates">
+    <h2 class="text-center pb-4 fs-1 fw-bold">Latest Updates</h2>
+
+    <div class="row align-items-stretch justify-content-center">
+
+        <!-- Update 1 -->
+        <div class="col-lg-4 col-md-6 col-12 my-2 my-lg-0">
+            <div class="update-card shadow rounded-3 p-4 h-100"
+                 style="border-radius: 15px; overflow: hidden; background: linear-gradient(145deg, #e8f4ff, #e8f4ff); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-megaphone-fill fs-3 text-primary me-2"></i>
+                    <h5 class="mb-0 fw-semibold"
+                        style="background: linear-gradient(to right, #0572b5, #4d187b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        New Course Launch
+                    </h5>
+                </div>
+                <p class="text-muted mb-2">
+                    We’ve launched a new Advanced Java course! Enroll now to enhance your backend skills.
+                </p>
+                <small class="text-secondary"><i class="bi bi-calendar-event"></i> Oct 25, 2025</small>
+            </div>
+        </div>
+
+        <!-- Update 2 -->
+        <div class="col-lg-4 col-md-6 col-12 my-2 my-lg-0">
+            <div class="update-card shadow rounded-3 p-4 h-100"
+                 style="border-radius: 15px; overflow: hidden; background: linear-gradient(145deg, #e8f4ff, #e8f4ff); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-bell-fill fs-3 text-warning me-2"></i>
+                    <h5 class="mb-0 fw-semibold"
+                        style="background: linear-gradient(to right, #0572b5, #4d187b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        Maintenance Notice
+                    </h5>
+                </div>
+                <p class="text-muted mb-2">
+                    Our servers will be under maintenance on Oct 28, from 1:00 AM to 3:00 AM UTC.
+                </p>
+                <small class="text-secondary"><i class="bi bi-clock"></i> 2 days ago</small>
+            </div>
+        </div>
+
+        <!-- Update 3 -->
+        <div class="col-lg-4 col-md-6 col-12 my-2 my-lg-0">
+            <div class="update-card shadow rounded-3 p-4 h-100"
+                 style="border-radius: 15px; overflow: hidden; background: linear-gradient(145deg, #e8f4ff, #e8f4ff); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-star-fill fs-3 text-success me-2"></i>
+                    <h5 class="mb-0 fw-semibold"
+                        style="background: linear-gradient(to right, #0572b5, #4d187b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        Achievement Unlocked
+                    </h5>
+                </div>
+                <p class="text-muted mb-2">
+                    Congrats! EduLearn has reached 50K+ active students this month. Thanks for your support!
+                </p>
+                <small class="text-secondary"><i class="bi bi-calendar3"></i> Oct 20, 2025</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== About Section | EduLearn ===== -->
+<section class="about py-2 overflow-hidden" id="about">
+    <div class="container-fluid px-lg-5 py-5">
+        <div class="row align-items-center g-5">
+
+            <!-- Image Column -->
+
+            <div class="col-lg-6 text-center">
+                <div class="about-img-wrapper position-relative d-inline-block">
+                    <div class="about-shape"></div>
+                    <img src="~/images/home-images/Edulearn_About_Image.png" width="500" height="500" alt="EduLearn About"
+                         class="img-fluid rounded-3 shadow-lg about-img">
+                </div>
+            </div>
+
+            <!-- Content Column -->
+            <div class="col-lg-6 m-0 p-0">
+                <h2 class="fw-bold display-6 mb-3 px-4 mt-4 mt-lg-0 px-sm-5 px-lg-0">
+                    About <span class="gradient-text">EduLearn</span>
+                </h2>
+                <p class="lead fs-6 fs-sm-3 text-muted mb-4 px-4 px-sm-5 px-lg-0">
+                    EduLearn is your trusted online platform for mastering modern <strong>
+                        development
+                        courses
+                    </strong> — from web and mobile development to cloud computing and AI. Learn with
+                    industry experts through hands-on projects and practical guidance.
+                </p>
+
+                <div class="mb-4 mx-0 p-0">
+                    <div class="d-flex align-items-center mb-3 px-4 px-sm-5 px-lg-0">
+                        <i class="bi bi-check-circle-fill text-primary fs-4 me-2"></i>
+                        <span class="fw-semibold text-dark">
+                            Comprehensive development tracks from beginner to
+                            advanced
+                        </span>
+                    </div>
+                    <div class="d-flex align-items-center mb-3 px-4 px-sm-5 px-lg-0">
+                        <i class="bi bi-check-circle-fill text-primary fs-4 me-2"></i>
+                        <span class="fw-semibold text-dark">Real-world projects and expert mentorship</span>
+                    </div>
+                    <div class="d-flex align-items-center px-4 px-sm-5 px-lg-0">
+                        <i class="bi bi-check-circle-fill text-primary fs-4 me-2"></i>
+                        <span class="fw-semibold text-dark">Flexible learning — anytime, anywhere</span>
+                    </div>
+                </div>
+
+                <a asp-action="AboutUs" asp-controller="Home" class="btn btn-primary btn-lg px-4 fs-6 fs-md-5 shadow-sm mx-4 mx-sm-5 mx-lg-0">
+                    Explore About Us!
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Soft gradient background -->
+    <!-- <div class="position-absolute top-0 start-0 w-100 h-100 about-bg-gradient m-0 p-0" style="z-index:-1;"></div>    -->
+</section>
+
+<!-- Contact Section -->
+<section class="contact pb-5 pt-2" id="contact">
+    <div class="container-lg container-sm-fluid container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-6">Contact <span class="gradient-text">Us</span></h2>
+            <p class="text-muted">Have questions? Reach out to us and we'll get back to you promptly.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <!-- Contact Form -->
+            <div class="col-lg-7">
+
+                    <form class="shadow p-2 p-sm-5 rounded-3 address-card" method="post" asp-action="Contact" asp-controller="Contact">
+                        @* <div class="mb-3">
+                        <label for="name" class="form-label fw-semibold">Name</label>
+                        <input type="text" class="form-control shadow-sm py-2 px-3 bg-light" id="name"
+                               placeholder="Your Name" required>
+                    </div> *@
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-semibold">Email</label>
+                            <input type="email" class="form-control shadow-sm py-2 px-3 bg-light" name="ContactEmail" id="email" placeholder="your@email.com" required>
+                        </div>
+                        @* <div class="mb-3">
+                        <label for="subject" class="form-label fw-semibold">Subject</label>
+                        <input type="text" class="form-control shadow-sm py-2 px-3 bg-light" id="subject"
+                               placeholder="Subject" required>
+                    </div> *@
+                        <div class="mb-3">
+                            <label for="message" class="form-label fw-semibold">Message</label>
+                            <textarea class="form-control shadow-sm py-2 px-3 bg-light" name="ContactMessage" id="message" rows="5" placeholder="Write your message..." required></textarea>
+                        </div>
+                     
+
+                        <div class="text-center">
+                            <button type="submit"
+                            class="btn btn-primary btn-lg px-2 fs-6 fs-sm-5 px-sm-4 mt-sm-2 shadow-sm">
+                                Send
+                                Message
+                            </button>
+                            <p class="text-dark my-1">@TempData["Msg"]</p>
+                        </div>
+                    </form>
+                    
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional Contact Info -->
+    <div class="row mt-5 mx-auto justify-content-center">
+
+        <!-- Address -->
+        <div class="row align-items-stretch justify-content-center">
+            <!-- Location -->
+            <div class="col-lg-4 col-sm-6 col-12 my-2 my-lg-0">
+                <div class="contact-card d-flex flex-column align-items-center shadow rounded-3 py-2 py-md-3 px-3 px-lg-4 h-100 address-card">
+                    <i class="bi bi-geo-alt-fill fs-2 text-primary mb-3"></i>
+                    <p class="fw-semibold mb-0 text-break text-center">Brahmasthan, Azamgarh (UP), India</p>
+                </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="col-lg-4 col-sm-6 col-12 my-2 my-lg-0">
+                <div class="contact-card d-flex flex-column align-items-center shadow rounded-3 py-2 py-md-3 px-3 px-lg-4 h-100 address-card">
+                    <i class="bi bi-telephone-fill fs-2 text-primary mb-3"></i>
+                    <p class="fw-semibold mb-0 text-center">+91 97087 98088</p>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="col-lg-4 col-sm-6 col-12 my-2 my-lg-0">
+                <div class="contact-card d-flex flex-column align-items-center shadow rounded-3 py-2 py-md-3 px-3 px-lg-4 h-100 address-card">
+                    <i class="bi bi-envelope-fill fs-2 text-primary mb-3"></i>
+                    <p class="fw-semibold mb-0 text-break text-center">contact@edulearn.com</p>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</section>
+
+<!-- ===== Team Section ===== -->
+<section class="team mt-4">
+    <div class="container-fluid pb-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Meet Our Team</h2>
+            <p class="text-muted">The passionate people behind our success</p>
+        </div>
+
+        <div class="row g-5 mx-auto">
+            <!-- Team Member 1 -->
+
+            <div class="col-xl-4 col-md-6">
+                <div class="card border-0 shadow d-flex flex-row align-items-center p-3 rounded-3 teambg">
+                    <img src="~/images/home-images/Monika_Yadav.jpg" class="rounded-circle me-3"
+                         alt="Team Member 1">
+                    <div>
+                        <h5 class="text-dark fw-bold mb-1 text-break">Monika Yadav</h5>
+                        <p class="text-primary fw-semibold mb-1 text-break">Full Stack Developer</p>
+                        <p class="text-muted small mb-2 text-break">
+                            Creative designer passionate about crafting user-friendly interfaces and beautiful
+                            web
+                            layouts.
+                        </p>
+                        <div>
+                            <a href="#" class="text-secondary me-2"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="text-secondary me-2"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-secondary"><i class="bi bi-envelope"></i></a>
+                        </div>
+                    </div>
+                    <!-- Full card clickable link -->
+                    <a href="#" target="_1" class="stretched-link"></a>
+                </div>
+            </div>
+
+            <!-- Team Member 1 -->
+            <div class="col-xl-4 col-md-6">
+
+                <div class="card border-0 shadow d-flex flex-row align-items-center p-3 rounded-3 teambg">
+                    <img src="https://picsum.photos/120/120?random=11" class="rounded-circle me-3"
+                         alt="Team Member 1">
+                    <div>
+                        <h5 class="text-dark fw-bold mb-1 text-break">Vishakha Chaurasia</h5>
+                        <p class="text-primary fw-semibold mb-1 text-break">Full Stack Developer</p>
+                        <p class="text-muted small mb-2 text-break">
+                            Creative designer passionate about crafting user-friendly interfaces and beautiful
+                            web
+                            layouts.
+                        </p>
+                        <div>
+                            <a href="#" class="text-secondary me-2"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="text-secondary me-2"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-secondary"><i class="bi bi-envelope"></i></a>
+                        </div>
+
+                    </div>
+                    <!-- Full card clickable link -->
+                    <a href="#" target="_2" class="stretched-link"></a>
+                </div>
+
+            </div>
+
+            <!-- Team Member 1 -->
+            <div class="col-xl-4 col-md-6">
+                <div class="card border-0 shadow d-flex flex-row align-items-center p-3 rounded-3 teambg">
+                    <img src="~/images/home-images/Shreya_Yadav.jpg" class="rounded-circle me-3"
+                         alt="Team Member 1">
+                    <div>
+                        <h5 class="text-dark fw-bold mb-1 text-break">Shreya Yadav</h5>
+                        <p class="text-primary fw-semibold mb-1 text-break">Full Stack Developer</p>
+                        <p class="text-muted small mb-2 text-break">
+                            Creative designer passionate about crafting user-friendly interfaces and beautiful
+                            web
+                            layouts.
+                        </p>
+                        <div>
+                            <a href="#" class="text-secondary me-2"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="text-secondary me-2"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-secondary"><i class="bi bi-envelope"></i></a>
+                        </div>
+                    </div>
+                    <!-- Full card clickable link -->
+                    <a href="#" target="_3" class="stretched-link"></a>
+                </div>
+            </div>
+
+            <!-- Team Member 1 -->
+            <div class="col-xl-4 col-md-6">
+                <div class="card border-0 shadow d-flex flex-row align-items-center p-3 rounded-3 teambg">
+                    <img src="~/images/home-images/Amrita_Yadav.jpg" class="rounded-circle me-3"
+                         alt="Team Member 1">
+                    <div>
+                        <h5 class="text-dark fw-bold mb-1 text-break">Amrita Yadav</h5>
+                        <p class="text-primary fw-semibold mb-1 text-break">Full Stack Developer</p>
+                        <p class="text-muted small mb-2 text-break">
+                            Creative designer passionate about crafting user-friendly interfaces and beautiful
+                            web
+                            layouts.
+                        </p>
+                        <div>
+                            <a href="#" class="text-secondary me-2"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="text-secondary me-2"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-secondary"><i class="bi bi-envelope"></i></a>
+                        </div>
+                    </div>
+                    <!-- Full card clickable link -->
+                    <a href="#" target="_4" class="stretched-link"></a>
+                </div>
+            </div>
+
+            <!-- Team Member 1 -->
+            <div class="col-xl-4 col-md-6">
+                <div class="card border-0 shadow d-flex flex-row align-items-center p-3 rounded-3 teambg">
+                    <img src="https://picsum.photos/120/120?random=11" class="rounded-circle me-3"
+                         alt="Team Member 1">
+                    <div>
+                        <h5 class="text-dark fw-bold mb-1 text-break">Deepak Vishwakarma</h5>
+                        <p class="text-primary fw-semibold mb-1 text-break">Full Stack Developer</p>
+                        <p class="text-muted small mb-2 text-break">
+                            Creative designer passionate about crafting user-friendly interfaces and beautiful
+                            web
+                            layouts.
+                        </p>
+                        <div>
+                            <a href="#" class="text-secondary me-2"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="text-secondary me-2"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-secondary"><i class="bi bi-envelope"></i></a>
+                        </div>
+                    </div>
+                    <!-- Full card clickable link -->
+                    <a href="#" target="_5" class="stretched-link"></a>
+                </div>
+            </div>
+
+            <!-- Team Member 1 -->
+            <div class="col-xl-4 col-md-6">
+                <div class="card border-0 shadow d-flex flex-row align-items-center p-3 rounded-3 teambg">
+                    <img src="~/images/home-images/Ayush_Maurya.jpg" class="rounded-circle me-3"
+                         alt="Team Member 1">
+                    <div>
+                        <h5 class="text-dark fw-bold mb-1 text-break">Ayush Maurya</h5>
+                        <p class="text-primary fw-semibold mb-1 text-break">Full Stack Developer</p>
+                        <p class="text-muted small mb-2 text-break">
+                            Creative designer passionate about crafting user-friendly interfaces and beautiful
+                            web
+                            layouts.
+                        </p>
+                        <div>
+                            <a href="#" class="text-secondary me-2"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="text-secondary me-2"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-secondary"><i class="bi bi-envelope"></i></a>
+                        </div>
+                    </div>
+                    <!-- Full card clickable link -->
+                    <a href="https://ayushdev07.netlify.app/" target="_6" class="stretched-link"></a>
+                </div>
+            </div>
+
+
+            <!-- Team Member 2 -->
+            <div class="col-xl-4 col-md-6 ">
+                <div class="card border-0 shadow d-flex flex-row align-items-center p-3 rounded-3 teambg">
+                    <img src="https://picsum.photos/120/120?random=12" class="rounded-circle me-3"
+                         alt="Team Member 2">
+                    <div>
+                        <h5 class="text-dark fw-bold mb-1 text-break">Refaque Kaleem</h5>
+                        <p class="text-primary fw-semibold mb-1 text-break">Full Stack Developer</p>
+                        <p class="text-muted small mb-2 text-break">
+                            Skilled in API development, database optimization, and server-side logic with C# and
+                            Java.
+                        </p>
+                        <div>
+                            <a href="#" class="text-secondary me-2"><i class="bi bi-github"></i></a>
+                            <a href="#" class="text-secondary me-2"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="text-secondary"><i class="bi bi-envelope"></i></a>
+                        </div>
+                    </div>
+                    <!-- Full card clickable link -->
+                    <a href="https://refaquedevop.netlify.app/" target="_7" class="stretched-link"></a>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="col-xl-4 col-md-6">
+                <div class="card border-0 shadow d-flex flex-row align-items-center p-3 rounded-3 teambg">
+                    <img src="~/images/home-images/Alok_Maurya.jpg" class="rounded-circle me-3"
+                         alt="Team Member 3">
+                    <div>
+                        <h5 class="text-dark fw-bold mb-1 text-break">Alok Maurya</h5>
+                        <p class="text-primary fw-semibold mb-1 text-break">Full Stack Developer</p>
+                        <p class="text-muted small mb-2 text-break">
+                            Expert in responsive design, animations, and modern JavaScript frameworks for
+                            interactive UIs.
+                        </p>
+                        <div>
+                            <a href="#" class="text-secondary me-2"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="text-secondary me-2"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="text-secondary"><i class="bi bi-envelope"></i></a>
+                        </div>
+                    </div>
+                    <!-- Full card clickable link -->
+                    <a href="https://alokmaurya.netlify.app/" target="_8" class="stretched-link"></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

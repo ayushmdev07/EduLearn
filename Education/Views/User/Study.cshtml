@@ -1,0 +1,14 @@
+﻿@model Education.Models.CourseClass
+
+@{
+    Layout = "_UserSidebarlayout";
+    ViewData["Title"] = "Study";
+}
+
+<div>
+<h2>Welcome</h2>
+<p><a asp-action="Courses" asp-controller="User" class="btn" id="login">Your Courses</a></p>
+<img src="~/images/course-images/@Model.CourseImage" alt="@Model.CourseImage" class="img-fluid" style="height:300px !important;"/>
+<h4>Start Learning 👉<span class="text-primary"> @Model.CourseName</span></h4>
+
+</div>

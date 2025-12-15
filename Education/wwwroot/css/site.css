@@ -1,0 +1,162 @@
+﻿/* ==============================================================
+   🌈 Global CSS (Optimized & Cleaned)
+   ============================================================== */
+
+/* Optional debugging border
+
+html {
+    scroll-behavior: smooth;
+}
+
+[id] {
+    scroll-margin-top: 100px;
+}
+
+/* -----------------------------------------------------------
+   🎨 Theme Variables (Easy color control)
+-------------------------------------------------------------- */
+:root {
+    --primary1: #24497b;
+    --primary2: #0076ba;
+    --primary3: #1521bb;
+    --footer-bg1: #0c3353;
+    --footer-bg2: #052238;
+    --footer-bg3: #060633;
+}
+
+/* --------------------------------------------------------------
+   🧍 Body
+-------------------------------------------------------------- */
+body {
+    background-image: linear-gradient(to right, #eaf9ff, #ecf8ff);
+    font-family: 'Poppins', sans-serif;
+    color: #0e0e52;
+    margin: 0;
+    padding: 0;
+}
+
+/* --------------------------------------------------------------
+   🔹 Navbar
+-------------------------------------------------------------- */
+nav {
+    background-image: linear-gradient(to right, #d1efff, #e2f4fc);
+}
+
+    nav .navbar-brand {
+        font-weight: 700;
+        background-image: linear-gradient(to right, var(--primary1), var(--primary2), var(--primary3));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+
+    nav .dropdown-menu {
+        background-image: linear-gradient(to right, #e1f5ff, #ebf9ff);
+        border: none;
+    }
+
+    nav .card,
+    nav .address-card,
+    nav .update-card {
+        border: 1px solid rgb(212, 212, 212) !important;
+    }
+
+    nav .dropdown-item:hover {
+        background-image: linear-gradient(to right, var(--primary1), var(--primary2), var(--primary3));
+        font-weight: 500;
+        color: whitesmoke;
+        border-radius: 4px;
+    }
+
+    /* 🔘 Navbar toggler */
+    nav .navbar-toggler {
+        background-color: transparent;
+        border: none;
+    }
+
+    nav .navbar-toggler-icon {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        background-color: var(--primary1); /* fallback for browsers without mask */
+        background-image: linear-gradient(to right, var(--primary1), var(--primary2), var(--primary3));
+        -webkit-mask-image: url("data:image/svg+xml;charset=UTF8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: contain;
+        mask-image: url("data:image/svg+xml;charset=UTF8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: contain;
+    }
+
+#register {
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 1px solid rgb(16, 37, 158);
+}
+
+    #register:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(13, 110, 253, 0.3);
+        border : none;
+    }
+
+    /* 👤 Login link */
+ #login {
+    background-image: linear-gradient(to right, var(--primary1), var(--primary2), var(--primary3)) !important;
+    -webkit-background-clip: text;
+    background-clip: text;
+    border:1px solid #2d238c !important;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+     #login:hover {
+        background-image: linear-gradient(to right, var(--primary1), var(--primary2), var(--primary3)) !important;
+        color: #fff !important;
+        background-clip: padding-box;
+        -webkit-background-clip: padding-box;
+        -webkit-text-fill-color: white;
+        border: none;
+    }
+
+    /* 🔵 Register button */
+     #register {
+        background-image: linear-gradient(to right, var(--primary1), var(--primary2), var(--primary3)) !important;
+        border: none !important;
+        color :white;
+        font-weight: 500;
+        transition: all 0.3s ease;+
+    }
+
+         #register:hover {
+            background-image: linear-gradient(to right, #18355c, #006aa8, #0f1785) !important;
+/*            outline: 1px solid rgb(16, 37, 158);*/
+        }
+
+
+/*   ⚙️ Footer -------------------------------------------------------------- */
+footer {
+    background-image: radial-gradient(ellipse, var(--footer-bg1), var(--footer-bg2), var(--footer-bg3));
+    color: rgb(174, 229, 255);
+    text-align: center;
+    padding: 20px 0;
+}
+
+    footer h5,
+    footer h6,
+    footer #currentDateTime {
+        color: rgb(174, 229, 255);
+    }
+
+    footer #f-top {
+        background-image: linear-gradient(to top, #0d2e58, #5c98d1);
+        margin-top: -3rem;
+        margin-bottom: 3rem;
+        padding: 32px;
+        border-radius: 10px 10px 0 0;
+    }

@@ -1,0 +1,69 @@
+﻿
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+}
+
+.card {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+}
+.card-body img {
+    border-radius: 50%;
+    border: 5px solid rgb(214, 103, 103);
+}
+
+
+.chart-section {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+    .chart-section:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+    }
+
+.chart-title {
+    text-align: center;
+    font-weight: 700;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 40px;
+}
+
+.Gcard {
+    border: none;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+    .Gcard:hover {
+        transform: translateY(-5px);
+    }
+
+.Gcard-title {
+    font-weight: 600;
+    color: #495057;
+}
+
+
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+}
+

@@ -1,0 +1,16 @@
+﻿
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+}
+
+.card {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+}
+
+.card-body img {
+    border-radius: 50%;
+    border: 5px solid rgb(214, 103, 103);
+}

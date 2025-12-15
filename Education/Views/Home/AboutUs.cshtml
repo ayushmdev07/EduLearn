@@ -1,0 +1,198 @@
+﻿
+@{
+    ViewData["Title"] = "AboutUs";
+}
+
+@section Styles{
+    <link href="~/css/About.css" rel="stylesheet" />
+}
+<div class="bodyAbout">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div id="box">
+        <h1 class="clr">About <span class="clr">EduLearn</span></h1>
+        <br/>
+        <p style="color:whitesmoke !important; font-weight:bold !important;">
+            
+                Empowering learners with Coding, Data Science, AI, and Machine Learning
+                skills.
+           
+        </p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="container my-5">
+        <div class="row m-0 p-0">
+            <div class="col-md-6 mb-md-0 text-center">
+                <img src="~/images/home-images/Team photo2.png" alt="About Image" class="img-fluid shadow-lg rounded-3">
+            </div>
+            <div class="col-md-6 p-2 p-md-4">
+                <h2 class="clr fw-bold">Who We Are</h2>
+                <p>
+                    Welcome to <span class="highlight clr">EduLearn</span> — your learning hub for
+                    <strong>Coding, Data Science, Artificial Intelligence,</strong> and
+                    <strong>Machine Learning</strong>.
+                </p>
+                <p>
+                    Our mission is to make complex technologies simple and accessible for everyone.
+                    We focus on <span class="highlight clr">practical learning, real-world projects,</span>
+                    and a strong foundation in modern tech skills.
+                </p>
+                <a asp-action="Contact" asp-controller="Contact" class="btn btn-custom mt-3 shadow" style="color:lightcyan;">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Established Section -->
+    <section class="container established shadow-lg border-radius">
+        <h2 class="clr">📅 Established in 2023</h2>
+        <p class="mt-3">
+            EduLearn was founded in <span class="highlight clr">2023</span> with a vision to bridge the gap between
+            learners and industry-ready skills.
+            Since then, we’ve empowered hundreds of students to build successful careers in tech.
+        </p>
+    </section>
+
+    <!-- What We Offer -->
+    <section class="container">
+        <h2 class="section-title clr fw-bold">What We Offer</h2>
+        <div class="row g-4 box-shadow">
+            <div class="col-md-3 col-sm-6">
+                <div class="card p-4 text-center text-dark">
+                    <h5>💻 Coding Tutorials</h5>
+                    <p>Step-by-step programming guides for beginners and experts alike.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card p-4 text-center text-dark">
+                    <h5>📊 Data Science Projects</h5>
+                    <p>Hands-on projects that help you apply data analysis skills in real life.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card p-4 text-center text-dark">
+                    <h5>🤖 AI & ML Concepts</h5>
+                    <p>Learn how intelligent systems work and how to build your own models.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card p-4 text-center text-dark">
+                    <h5>🚀 Career Guidance</h5>
+                    <p>Get industry insights, interview prep tips, and career growth advice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="container testimonial-section">
+        <h2 class="section-title clr fw-bold">What Our Students Say</h2>
+
+        <div id="testimonialCarousel" class="carousel slide text-dark" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <div class="testimonial-card mx-auto" style="max-width: 600px;">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="testimonial-img"
+                             alt="Student 1">
+                        <h5 class="mt-2 text-dark">Rahul Sharma</h5>
+                        <p class="text-dark mt-2">
+                            "EduLearn changed the way I learn programming! The AI and Data
+                            Science tutorials are beginner-friendly and very practical."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="testimonial-card mx-auto" style="max-width: 600px;">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="testimonial-img"
+                             alt="Student 2">
+                        <h5 class="mt-2 text-dark">Priya Singh</h5>
+                        <p class="text-dark mt-2">
+                            "I started as a beginner, but with EduLearn I built my first
+                            Machine Learning project. The guidance and content are top-notch!"
+                        </p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="testimonial-card mx-auto" style="max-width: 600px;">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" class="testimonial-img"
+                             alt="Student 3">
+                        <h5 class="mt-2 text-dark">Aman Verma</h5>
+                        <p class="text-dark mt-2">
+                            "The best place to learn coding interactively. The mentors really
+                            focus on your growth and clarity of concepts."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next " type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon">
+                    <i class="fa-light fa-arrow-right"
+                       style="color: #000;"></i>
+                </span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Meet Our Team Section -->
+    <section class="container my-5">
+        <h2 class="section-title clr fw-bold">Meet Our Team</h2>
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-md-3 col-sm-6">
+                <div class="team-card">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member 1">
+                    <h5 class="mt-3">Shreya yadav</h5>
+                    <p>Full Stack Developer</p>
+                    <a href="#" class="clr fs-4"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="team-card">
+                    <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Team Member 2">
+                    <h5 class="mt-3">Ayush Maurya</h5>
+                    <p>Full Stack Developer</p>
+                    <a href="#" class="clr fs-4"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="team-card">
+                    <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Team Member 3">
+                    <h5 class="mt-3">Alok Maurya</h5>
+                    <p>Full Stack Developer</p>
+                    <a href="#" class="clr fs-4"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="team-card">
+                    <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Team Member 4">
+                    <h5 class="mt-3">Refaque Kaleem</h5>
+                    <p>Full Stack Developer</p>
+                    <a href="https:/linkedin.com/in/shahrefaque6387" target="123" class="clr fs-4">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container my-5 text-center">
+        <h2 class="clr fw-bold mb-3">Get in Touch</h2>
+        <p class="fs-5">Have questions, ideas, or feedback? We’d love to hear from you.</p>
+        <a href="mailto:contact@EduLearn.com" class="btn btn-custom shadow" style="color:lightcyan;">Email Us</a>
+    </section>
+</div>

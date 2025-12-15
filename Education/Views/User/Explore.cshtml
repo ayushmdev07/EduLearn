@@ -1,0 +1,53 @@
+﻿@model Education.Models.CourseClass
+@{
+    Layout = "_UserSidebarlayout";
+    ViewData["Title"] = "Explore";
+}
+
+
+<div class="container">
+    <div class="row">
+        <!-- About Batch Main Section -->
+        <div class="col-sm-6 about-section rounded-2 card shadow mt-5">
+            <div class="batch-card p-2 p-sm-4">
+                <h3>About the Batch</h3>
+
+                <p><strong>Course Name:</strong> @Model.CourseName</p>
+                <p><strong>Course Duration:</strong> @Model.CourseDuration</p>
+                <p><strong>Validity:</strong> @Model.CourseEndDate</p>
+                <p><strong>Mode of Lectures:</strong> Recorded</p>
+                <p><strong>Schedule:</strong> 2 Classes/day, 6 days per week</p>
+                <p><strong>Course Language:</strong> @Model.CourseLanguage</p>
+
+                <button class="btn w-100 mt-3" id="login">More Features : Coming Soon! </button>
+            </div>
+        </div>
+        <!-- Fixed Course Thumbnail Card -->
+        <div class="col-sm-6 mt-5">
+            <div class="card p-2 shadow">
+               
+                    <img src="~/images/course-images/@Model.CourseImage" alt="@Model.CourseImage">
+
+                <div class="p-2">
+                    <h5>@Model.CourseName</h5>
+
+                    <p class="small mb-1">Starts on <strong>@Model.CourseStartDate</strong></p>
+                    <p class="small">Ends on <strong>@Model.CourseEndDate</strong></p>
+
+                    <h4 class="text-success">₹@Model.CoursePrice <del class="text-danger fs-6">₹@(Model.CoursePrice + 2000)</del></h4>
+                    <span class="badge bg-success"> Discount Applied</span>
+
+                    <form asp-action="@ViewBag.action" asp-controller="User" method="@(ViewBag.action == "Purchase" ? "post" : "get")">
+
+                        <input type="hidden" name="Cid" value="@Model.CourseId" />
+                        <button type="submit" class="btn flex-fill w-100 mt-3" id="register">
+                            @ViewBag.Btn
+                        </button>
+                    </form>
+
+                    <p class="text-success my-2">@TempData["msg"]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

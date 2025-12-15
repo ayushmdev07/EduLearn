@@ -1,0 +1,40 @@
+﻿@model List<Education.Models.FeedbackClass>
+@{
+    Layout = "_UserSidebarlayout";
+    ViewData["Title"] = "Feedback";
+}
+@{
+    int count = 1;
+}
+
+<!-- FeedBack History -->
+<div class="container-fluid my-3 p-0 px-sm-2">
+    <h2 class="text-center fw-bold mb-3">Your Feedbacks</h2>
+
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Sr.No</th>
+                <th scope="col">Email</th>
+                <th scope="col">Feedback Messages</th>
+                <th scope="col">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@count</th>
+                    <td>@item.FeedbackEmail</td>
+                    <td>@item.FeedbackMessage</td>
+                    <td>@item.FeedbackDate</td>
+                </tr>
+            count++;
+            }
+        </tbody>
+    </table>
+   
+</div>
+
+
+

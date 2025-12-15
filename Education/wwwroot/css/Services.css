@@ -1,0 +1,162 @@
+﻿/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0,74,173,0.6), rgba(0,74,173,0.6)), url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1400&q=80');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 20px;
+    border-radius: 0 0 40px 40px;
+    text-align: center;
+}
+
+    .hero-section h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 3rem;
+        font-weight: 700;
+        animation: fadeInDown 1s ease-in-out;
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 20px auto;
+        animation: fadeInUp 1.3s ease-in-out;
+    }
+
+    .hero-section .btn {
+        border-radius: 25px;
+        padding: 10px 30px;
+        background: #fff;
+        color: #004aad;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+        .hero-section .btn:hover {
+            background: #007bff;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Title */
+h2.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #004aad;
+    margin-top: 70px;
+}
+
+/* Course Cards */
+.service-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    padding: 30px;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+    .service-card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 10px 25px rgba(0,74,173,0.3);
+    }
+
+    .service-card i {
+        font-size: 55px;
+        color: #007bff;
+        margin-bottom: 15px;
+        transition: color 0.3s;
+    }
+
+    .service-card:hover i {
+        color: #004aad;
+    }
+
+    .service-card h4 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+    }
+
+.btn-primary {
+    background-color: #004aad;
+    border: none;
+    border-radius: 25px;
+    padding: 8px 25px;
+    font-weight: 600;
+}
+
+    .btn-primary:hover {
+        background-color: #007bff;
+    }
+
+/* Training Section */
+.training-section {
+    background: #a2d0fa;
+    padding: 80px 20px;
+    /*border-radius: 30px;*/
+    margin-top: 70px;
+}
+
+    .training-section h3 {
+        color: #004aad;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+/* Interview Section */
+.interview-section {
+    padding: 80px 20px;
+    background: #f0f6ff;
+}
+
+.interview-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+    .interview-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0,74,173,0.3);
+    }
+
+    .interview-card i {
+        font-size: 50px;
+        color: #004aad;
+        margin-bottom: 15px;
+    }
+
+.interview-section h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #004aad;
+    margin-bottom: 50px;
+}

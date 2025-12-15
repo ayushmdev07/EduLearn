@@ -1,0 +1,164 @@
+﻿.hero {
+    background: radial-gradient(circle, rgb(216, 247, 255), rgb(225, 250, 255));
+    background-size: contain;
+    background-repeat: repeat-x;
+    background-position: 50% 60%;
+    backdrop-filter: blur(5px);
+}
+
+.heroBox {
+    height: 420px;
+    overflow: hidden;
+}
+
+#heroImageBox {
+    background-image: url("/images/home-images/imageGraduationGirl.png");
+    background-repeat: no-repeat;
+    background-size: 650px auto;
+    background-position: 42% 34%;
+    background-origin: content-box;
+}
+
+
+
+
+.btn-primary {
+    background-image: linear-gradient(to right, #24497b, #0076ba, #1521bb);
+    border: none;
+    font-weight: 500;
+}
+
+    .btn-primary:hover {
+        background-image: linear-gradient(to right, #18355c, #006aa8, #0f1785);
+        outline: 1px solid rgb(16, 37, 158);
+    }
+
+#login,
+.heroBtn {
+    background-image: linear-gradient(to right, #24497b, #0076ba, #1521bb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 500;
+}
+
+    #login:hover,
+    .heroBtn:hover {
+        background-image: linear-gradient(to right, #24497b, #0076ba, #1521bb);
+        color: #fff !important;
+        background-clip: padding-box;
+        -webkit-background-clip: padding-box;
+        -webkit-text-fill-color: white;
+    }
+
+
+
+
+
+
+.course-card {
+    transition: transform 0.3s;
+}
+
+    .course-card:hover {
+        transform: translateY(-8px);
+    }
+
+.gradient-text {
+    background: linear-gradient(90deg, #0759d4, #490aae);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.update-card,
+.contact-card,
+#contact form {
+    transition: all 0.2s ease-in-out;
+}
+
+    .update-card:hover,
+    .contact-card:hover,
+    #contact form:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+
+.about-img-wrapper {
+    position: relative;
+}
+
+.about-shape {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at center, rgba(13, 110, 253, 0.2) 0%, transparent 70%);
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.about-img {
+    animation: float 2.5s ease-in-out infinite;
+    border-radius: 10px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+.gradient-text {
+    background: linear-gradient(to right, #24497b, #0076ba, #1521bb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Smooth hover effects for form */
+form .form-control:focus {
+    border-color: #0076ba;
+    box-shadow: 0 0 8px rgba(0, 118, 186, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button hover */
+form .btn-primary:hover {
+    background-color: #1521bb;
+    transform: translateY(-2px);
+    transition: all 0.3s ease-in-out;
+}
+
+.teambg,
+.address-card {
+    background-image: linear-gradient(145deg, #ecf7ff, #e8f4ff);
+}
+
+.team .card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .team .card:hover,
+    .course .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+.team img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}

@@ -1,0 +1,47 @@
+﻿
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+}
+
+.card {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+}
+
+.card-body img {
+    border-radius: 50%;
+    border: 5px solid rgb(214, 103, 103);
+}
+
+
+/* Feedbacks */
+
+.table thead th {
+    background-color: #d7ebff !important;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f3f8ff;
+}
+
+h2 i {
+    color: #004080;
+}
+
+/* Apply alternating row colors that override Bootstrap */
+.table tbody tr:nth-child(even) td {
+    background-color: #f8f9fa !important; /* light gray */
+}
+
+.table tbody tr:nth-child(odd) td {
+    background-color: #ffffff !important; /* white */
+}
+
+/* Optional hover effect */
+.table tbody tr:hover td {
+    background-color: #fff3cd !important; /* soft yellow highlight */
+    transition: background-color 0.3s ease;
+}

@@ -1,0 +1,86 @@
+﻿@{
+    Layout = "_Layout"; // Use main layout as base
+}
+@{
+    var pageTitle = ViewData["Title"] as string;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/UserSidebarLayout/UserSidebar.css" />
+
+    @if (pageTitle == "Courses" || pageTitle == "AvailableCourses")
+    {
+        <link rel="stylesheet" href="~/css/UserSidebarLayout/Courses.css" />
+    }
+    else if (pageTitle == "Account")
+    {
+        <link rel="stylesheet" href="~/css/UserSidebarLayout/Profile.css" />
+    }
+
+}
+<!-- NAVBAR --> 
+<div class="container-fluid bg-dark text-white">
+    <div class="row m-0 py-2">
+        <div class="col-md-12 d-flex align-items-center">
+                <button id="toggleUserBtn" class="btn btn-outline-light me-3">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <h5 class="m-0"><a style="text-decoration:none;" class="text-white">
+                <i class="fa fa-rocket"></i>User/<span class="text-info">@pageTitle</span></a></h5>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN AREA (SIDEBAR + CONTENT) -->
+<div class="row m-0">
+
+    <!-- SIDEBAR -->
+    <div id="sidebar" class="col-md-2">
+
+        <!-- Dashboard -->
+        <div class=" align-items-center px-3 mb-3 mt-3">
+            <h5 class="mb-0">Menu</h5>
+        </div>
+        <ul class="list-unstyled">
+            <li><a asp-action="Dashboard" asp-controller="User"><i class="bi bi-speedometer2 text-primary me-2"></i>Dashboard</a></li>
+            <li><a asp-action="Courses" asp-controller="User"><i class="bi bi-kanban text-success me-2"></i>Courses</a></li>
+            <li><a asp-action="AvailableCourses" asp-controller="User"><i class="bi bi-bag-check text-secondary me-2"></i>Available Courses</a></li>
+            <li><a asp-action="Contacts" asp-controller="User"><i class="bi bi-envelope text-info me-2"></i>Contacts</a></li>
+            <li><a asp-action="Feedback" asp-controller="User"><i class="bi bi-chat-dots text-primary me-2"></i>Feedbacks</a></li>
+        </ul>
+        <hr>
+        <ul class="list-unstyled">
+            <li><a asp-action="Account" asp-controller="User"><i class="bi bi-gear text-secondary me-2"></i>Account</a></li>
+            <li><a asp-action="Logout" asp-controller="Authentication"><i class="bi bi-box-arrow-right text-danger me-2"></i>Logout</a></li>
+        </ul>
+
+    </div>
+
+
+    <!-- CONTENT AREA -->
+    <div id="content" class="col-md-10 p-2">
+        @RenderBody()
+    </div>
+
+</div>
+
+@section Scripts {
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sidebar = document.getElementById("sidebar");
+        const content = document.getElementById("content");
+        const toggleUserBtn = document.getElementById("toggleUserBtn");
+
+        if (toggleUserBtn && sidebar && content) {
+            toggleUserBtn.addEventListener("click", () => {
+                sidebar.classList.toggle("collapsed");
+                content.classList.toggle("full");
+            });
+        }
+    });
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+}

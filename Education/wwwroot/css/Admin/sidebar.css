@@ -1,0 +1,42 @@
+﻿/* Sidebar */
+#sidebar {
+    background: #000;
+    color: white;
+    min-height: 100vh;
+    /* FIX: Sidebar now grows with content */
+    height: auto;
+    padding-top: 10px;
+    transition: width 0.3s, padding 0.3s;
+    overflow: hidden;
+}
+
+    /* Collapsed sidebar */
+    #sidebar.collapsed {
+        width: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Sidebar links */
+    #sidebar a {
+        color: #ccc;
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+        #sidebar a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+/* Content area */
+#content {
+    transition: margin-left 0.3s, width 0.3s;
+}
+
+    /* When sidebar collapses, content becomes full width */
+    #content.full {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }

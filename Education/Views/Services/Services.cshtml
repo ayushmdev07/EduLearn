@@ -1,0 +1,193 @@
+﻿@model IEnumerable<Education.Models.CourseClass>
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    var Uid = HttpContextAccessor.HttpContext.Session.GetInt32("UserId");
+}
+
+@{
+    ViewData["Title"] = "Services";
+}
+ @section Styles { 
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link href="~/css/Services.css" rel="stylesheet" />
+    <link href="~/css/UserSidebarLayout/Courses.css" rel="stylesheet" />
+ }
+
+
+<!-- Hero -->
+<section class="hero-section" data-aos="fade-down">
+    <h1>Empowering Growth Through Knowledge & Innovation</h1>
+    <p>Welcome to <b>VST Growth Business</b> — where we train, build projects, and prepare you for success in the real world.</p>
+    <a class="btn" href="#services">Explore Now</a>
+</section>
+
+<!-- Courses Section -->
+<div class="container-lg text-center" >
+    <h2 class="section-title" data-aos="zoom-in">Our Career-Building Courses</h2>
+    <p class="text-muted mt-2">Advance your skills with professional, job-ready programs</p>
+
+    <div class="row my-2 p-0 d-flex justify-content-center g-4 mx-1 mx-lg-5 mx-xl-2">
+        <h2 class="mb-0 mt-2 fw-bold text-center AvCourses" id="services">Available Courses</h2>
+
+        @foreach (var item in Model)
+        {
+            if (item.CoursePrice != 0)
+            {
+                <div class="col-11 col-sm-9 col-md-6 col-lg-6 col-xl-4">
+                    <div class="course-card">
+
+                        <div class="aspect-16x9">
+                            <img src="~/images/course-images/@item.CourseImage" alt="@item.CourseImage">
+                        </div>
+
+                        <div class="p-3">
+                            <h5 class="fw-bold"> @item.CourseName</h5>
+
+                            <span class="badge badge-new">NEW</span>
+                            <span class="badge bg-light text-dark ms-1"> @item.CourseLanguage</span>
+
+                            <p class="course-details mt-2">🗓 Starts on <b> @item.CourseStartDate</b></p>
+                            <p class="course-details mt-2">🗓 Expiry Date <b> @item.CourseEndDate</b></p>
+                            <p class="course-details mt-2">🗓 Duration <b> @item.CourseDuration</b></p>
+
+                            <h5 class="price mb-0 text-success">
+                                ₹@item.CoursePrice
+                                <span class="text-decoration-line-through text-danger fs-6"> ₹@(item.CoursePrice + 2000)</span>
+                            </h5>
+
+                            <p class="discount">Discount coupon applied</p>
+
+                            <div class="d-flex gap-2 mt-3">
+                            @if (User.Identity.IsAuthenticated && Uid != null)
+                            {
+                                @if ( ((int[])ViewBag.check).Contains(item.CourseId) )
+                                {
+                                    @Html.ActionLink("Explore", "Explore", "User", new { Cid = item.CourseId }, new { @class = "btn flex-fill", id = "login" })
+                                }
+                                else
+                                {
+                                    @Html.ActionLink("Explore", "Explore", "User", new { Cid = item.CourseId }, new { @class = "btn flex-fill", id = "login" })
+                                    @Html.ActionLink("Buy Now!", "Explore", "User", new { Cid = item.CourseId }, new { @class = "btn flex-fill", id = "register" })
+                                   
+                                    }
+                            } else
+                                {
+                                    @Html.ActionLink("Explore", "Login", "Authentication", new{}, new { @class = "btn flex-fill", id = "login" })
+                                    @Html.ActionLink("Buy Now!", "Login", "Authentication",new{}, new { @class = "btn flex-fill", id = "register" })
+                                }
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+        }
+        </div>
+
+        <hr />
+    <div class="row my-2 p-0 d-flex justify-content-center g-4 mx-1 mx-lg-5 mx-xl-2">
+        <h2 class="mb-0 mt-2 fw-bold text-center AvCourses my-4">Our Free Courses</h2>
+
+        @foreach (var item in Model)
+        {
+            if (item.CoursePrice == 0)
+            {
+                <div class="col-11 col-sm-9 col-md-6 col-lg-6 col-xl-4">
+                    <div class="course-card">
+
+                        <div class="aspect-16x9">
+                            <img src="~/images/course-images/@item.CourseImage" alt="@item.CourseImage">
+                        </div>
+
+                        <div class="p-3">
+                            <h5 class="fw-bold"> @item.CourseName</h5>
+
+                            <span class="badge badge-new">NEW</span>
+                            <span class="badge bg-light text-dark ms-1"> @item.CourseLanguage</span>
+
+                            <p class="course-details mt-2">🗓 Starts on <b> @item.CourseStartDate</b></p>
+                            <p class="course-details mt-2">🗓 Expiry Date <b> @item.CourseEndDate</b></p>
+                            <p class="course-details mt-2">🗓 Duration <b> @item.CourseDuration</b></p>
+
+                            <h5 class="price mb-0 text-success">
+                                ₹@item.CoursePrice
+                                <span class="text-decoration-line-through text-danger fs-6"> ₹@(item.CoursePrice + 2000)</span>
+                            </h5>
+
+                            <p class="discount">Discount coupon applied</p>
+
+                            <div class="d-flex gap-2 mt-3">
+                                @if (User.Identity.IsAuthenticated && Uid != null)
+                                {
+                                    @Html.ActionLink("Explore", "Explore", "User", new { Cid = item.CourseId }, new { @class = "btn flex-fill", id = "login" })
+                                }
+                                else
+                                {
+                                    @Html.ActionLink("Explore", "Login", "Authentication", new{}, new { @class = "btn flex-fill", id = "login" })
+                                }
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+        }
+
+
+    </div>
+
+</div>
+
+<!-- Training Section -->
+<section class="training-section text-center" data-aos="fade-up">
+    <div class="container">
+        <h3>Professional Training & Project Development</h3>
+        <p class="mt-3">We provide hands-on training, build client projects, and deliver real-time experience to students for better career growth.</p>
+    </div>
+</section>
+
+<!-- Interview Section -->
+<section class="interview-section text-center" data-aos="fade-up">
+    <div class="container">
+        <h3>Interview Preparation & Career Support</h3>
+
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="interview-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h5>Mock Interviews</h5>
+                    <p>Practice real company interviews with our mentors to boost your confidence.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="150">
+                <div class="interview-card">
+                    <i class="fas fa-comments"></i>
+                    <h5>Soft Skills Training</h5>
+                    <p>Develop strong communication, leadership, and team collaboration skills.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="interview-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h5>Resume Building</h5>
+                    <p>Create a professional resume and LinkedIn profile that stands out.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+
+}

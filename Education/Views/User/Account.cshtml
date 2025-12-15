@@ -1,0 +1,98 @@
+﻿@model Education.Models.UserClass
+@{
+    Layout = "_UserSidebarlayout";
+    ViewData["Title"] = "Account";
+}
+
+
+<!-- Profile Section -->
+
+    <div class="container mt-4">
+    <h2 class="mb-1 mt-1 fw-bold text-center AvCourses">Your Account</h2>
+    <p class="text-center text-success">@TempData["Msg"]</p>
+
+        <div class="profile-section mt-5" data-aos="fade-up">
+            <div class="profile-header">
+                <div class="d-flex align-items-center">
+
+                <img src="@Model.UserImage" class="profile-pic me-3" alt="User" />
+            
+                    <div>
+                    <h2 class="AvCourses">@Model.UserFullName</h2>
+                        @* <p class="text-muted mb-1">Full Stack Developer</p> *@
+                        <p class="text-secondary"><i class="bi bi-geo-alt"></i> India</p>
+                    </div>
+                </div>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn" id="register" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="bi bi-pencil"></i> Edit Profile </button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered align-middle text-center">
+                    <tbody>
+                        <tr>
+                            <th>Full Name</th>
+                            <td>@Model.UserFullName</td>
+                        </tr>
+                        <tr>
+                            <th>User Name</th>
+                        <td>@Model.UserName</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                        <td>@Model.UserEmail</td>
+                        </tr>
+                        <tr>
+                            <th>Date of Birth</th>
+                        <td>@Model.UserDOB</td>
+                        </tr>
+                        <tr>
+                            <th>Register DateTime</th>
+                        <td>@Model.UserRegisterDate</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Updation Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" asp-action="UpdateUser" asp-controller="User" enctype="multipart/form-data">
+
+            <div class="modal-body">
+                
+                    <label class="form-label my-1" for="a1">Full Name</label>
+                    <input type="text" class="form-control" placeholder="Update Your Full Name" id="a1" name="UserFullName" value="@ViewBag.uFullName" />
+
+                    <label class="form-label my-1" for="a2">UserName</label>
+                    <input type="text" class="form-control" placeholder="Update Your UserName" id="a2" name="UserName" value="@ViewBag.uName" />
+
+                    <label class="form-label my-1" for="a3">Email Id</label>
+                    <input type="text" class="form-control" placeholder="Update Your Email" id="a3" name="UserEmail" value="@ViewBag.uEmail" />
+
+                    <label class="form-label my-1" for="a4">Date of Birth</label>
+                    <input type="date" class="form-control" placeholder="Update Your Data-of-Birth" id="a4" name="UserDOB" value="@ViewBag.uDob" />
+                  
+                    <label class="form-label my-1" for="a5">Update Profile</label>
+                    <input type="file" accept="image/*" class="form-control" id="a5" name="file"/>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn" id="register">Save changes</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Education.Models.CourseClass>
+@{
+    Layout = "_UserSidebarlayout";
+    ViewData["Title"] = "Courses";
+}
+
+<div class="row my-2 p-0 d-flex justify-content-center g-4 mx-1 mx-lg-5 mx-xl-2">
+
+    @if (Model != null && Model.Any())
+    {
+    <h2 class="mb-0 mt-2 fw-bold text-center AvCourses">Your Courses</h2>
+    
+    @foreach (var item in Model)
+    {
+        if (item.CoursePrice != 0)
+        {
+                <div class="col-11 col-sm-9 col-md-6 col-lg-6 col-xl-4">
+                    <div class="course-card">
+
+                        <div class="aspect-16x9">
+                            <img src="~/images/course-images/@item.CourseImage" alt="@item.CourseImage">
+                        </div>
+
+                        <div class="p-3">
+                            <h5 class="fw-bold">@item.CourseName</h5>
+
+                            <span class="badge badge-new">NEW</span>
+                            <span class="badge bg-light text-dark ms-1">@item.CourseLanguage</span>
+
+                            <p class="course-details mt-2">🗓 Starts on <b>@item.CourseStartDate</b></p>
+                            <p class="course-details mt-2">🗓 Expiry Date <b>@item.CourseEndDate</b></p>
+                            <p class="course-details mt-2">🗓 Duration <b>@item.CourseDuration</b></p>
+
+                            <h5 class="price mb-0 text-success">
+                                ₹@item.CoursePrice
+                                <span class="text-decoration-line-through text-danger fs-6">₹@(item.CoursePrice+2000)</span>
+                            </h5>
+
+                            <p class="discount">Discount coupon applied</p>
+
+                            <div class="d-flex gap-2 mt-3">
+                                @Html.ActionLink("Explore", "Explore", "User", new { Cid = item.CourseId }, new { @class = "btn flex-fill", id = "login" })
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+        }
+    }
+    }
+    </div>
+                <hr />
+<div class="row my-2 p-0 d-flex justify-content-center g-4 mx-1 mx-lg-5 mx-xl-2">
+
+    @if (Model != null && Model.Any())
+    {
+                <h2 class="mb-0 mt-2 fw-bold text-center AvCourses my-4">Our Free Courses</h2>
+
+    @foreach (var item in Model)
+    {
+        if (item.CoursePrice == 0)
+        {
+                <div class="col-11 col-sm-9 col-md-6 col-lg-6 col-xl-4">
+                    <div class="course-card">
+
+                        <div class="aspect-16x9">
+                            <img src="~/images/course-images/@item.CourseImage" alt="@item.CourseImage">
+                        </div>
+
+                        <div class="p-3">
+                            <h5 class="fw-bold">@item.CourseName</h5>
+
+                            <span class="badge badge-new">NEW</span>
+                            <span class="badge bg-light text-dark ms-1">@item.CourseLanguage</span>
+
+                            <p class="course-details mt-2">🗓 Starts on <b>@item.CourseStartDate</b></p>
+                            <p class="course-details mt-2">🗓 Expiry Date <b>@item.CourseEndDate</b></p>
+                            <p class="course-details mt-2">🗓 Duration <b>@item.CourseDuration</b></p>
+
+                            <h5 class="price mb-0 text-success">
+                                ₹@item.CoursePrice
+                                <span class="text-decoration-line-through text-danger fs-6">₹@(item.CoursePrice + 2000)</span>
+                            </h5>
+
+                            <p class="discount">Discount coupon applied</p>
+
+                            <div class="d-flex gap-2 mt-3">
+                                @Html.ActionLink("Explore", "Explore", "User", new { Cid = item.CourseId }, new { @class = "btn flex-fill", id = "login" })
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+        }
+    }
+ }
+
+</div>
+

@@ -1,0 +1,80 @@
+﻿
+@{
+    Layout = "_UserSidebarlayout";
+    ViewData["Title"] = "Dashboard";
+}
+
+
+<div class="container-fluid my-3 p-0">
+
+    <div class="row mx-auto p-0 p-sm-2">
+
+        <h2 class="text-center fw-bold mb-3">Your Dashboard</h2>
+        <!-- Card -->
+        <div class="col-xxl-4 col-md-6 my-2">
+            <div class="card border-0 shadow d-flex flex-row align-items-center p-3 rounded-3 teambg">
+                <img src="~/images/Courses.webp" width="125" height="125" class="rounded-circle me-3" alt="Card">
+                <div class="px-1">
+                    <h5 class="text-dark fw-bold mb-1 text-break ps-1">Your Courses</h5>
+                    <p class="fw-semibold mb-1 text-break ps-1 text-muted">Total - @ViewBag.UserCourseCount</p>
+                    <a asp-action="Courses" asp-controller="User" class="btn btn-primary my-2" id="register">Visit Here</a>
+                </div>
+    
+            </div>
+        </div>
+        <!-- Card -->
+        <div class="col-xxl-4 col-md-6 my-2">
+            <div class="card border-0 shadow d-flex flex-row align-items-center p-3 rounded-3 teambg">
+                <img src="~/images/Available Courses.png" width="125" height="125" class="rounded-circle me-3" alt="Card">
+                <div class="px-1">
+                    <h5 class="text-dark fw-bold mb-1 text-break ps-1">Available Courses</h5>
+                    <p class="fw-semibold mb-1 text-break ps-1 text-muted">Total - @ViewBag.CourseCount</p>
+                    <a asp-action="AvailableCourses" asp-controller="User" class="btn btn-primary my-2" id="register">Visit Here</a>
+                </div>
+
+            </div>
+        </div>
+        <!-- Card -->
+        <div class="col-xxl-4 col-md-6 my-2">
+            <div class="card border-0 shadow d-flex flex-row align-items-center p-3 rounded-3 teambg">
+                <img src="~/images/Contact.webp" width="125" height="125" class="rounded-circle me-3" alt="Card">
+                <div class="px-1">
+                    <h5 class="text-dark fw-bold mb-1 text-break ps-1">Your Contacts</h5>
+                    <p class="fw-semibold mb-1 text-break ps-1 text-muted">Total - @ViewBag.ContactCount</p>
+                    <a asp-action="Contacts" asp-controller="User" class="btn btn-primary my-2" id="register">Visit Here</a>
+                </div>
+
+            </div>
+        </div>
+        <!-- Card -->
+        <div class="col-xxl-4 col-md-6 my-2">
+            <div class="card border-0 shadow d-flex flex-row align-items-center p-3 rounded-3 teambg">
+                <img src="~/images/Feedback.jpeg" width="125" height="125" class="rounded-circle me-3" alt="Card">
+                <div class="px-1">
+                    <h5 class="text-dark fw-bold mb-1 text-break ps-1">Your Feedbacks</h5>
+                    <p class="fw-semibold mb-1 text-break ps-1 text-muted">Total - @ViewBag.FeedbackCount</p>
+                    <a asp-action="Feedback" asp-controller="User" class="btn btn-primary my-2" id="register">Visit Here</a>
+                </div>
+        
+            </div>
+        </div>
+
+        <!-- Card -->
+        <div class="col-xxl-4 col-md-6 my-2">
+            <div class="card border-0 shadow d-flex flex-row align-items-center p-3 rounded-3 teambg">
+                <img src="/Authentication/GetImage?file=@ViewBag.UserImage" width="125" height="125" class="rounded-circle me-3" alt="@ViewBag.UserImage">
+                <div class="px-1">
+                    <h5 class="text-dark fw-bold mb-1 text-break ps-1">@ViewBag.UserFullName</h5>
+                    <p class="text-primary fw-semibold mb-1 text-break ps-1">@ViewBag.UserName</p> 
+                    <a asp-action="Account" asp-controller="User" class="btn btn-primary my-2" id="register">Visit Here</a>
+                </div>
+                
+            </div>
+        </div>
+
+
+    </div>
+    <p class="text-center"><a asp-action="Logout" asp-controller="Authentication" class="btn btn-danger w-25 my-4" style="font-size: 18px;">Logout</a></p>
+
+</div>
+

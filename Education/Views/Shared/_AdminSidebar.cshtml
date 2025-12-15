@@ -1,0 +1,121 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+
+@{
+    var pageTitle = ViewData["Title"] as string;
+}
+@section Styles {
+
+
+
+    <link href="~/css/Admin/sidebar.css" rel="stylesheet" />
+
+
+
+    @if(pageTitle == "Index")
+    {
+        <link href="~/css/Admin/index.css" rel="stylesheet" />
+    }
+    else if (pageTitle == "Students")
+    {
+        <link href="~/css/Admin/student.css" rel="stylesheet" />
+
+    }
+    else if (pageTitle == "Teacher" || pageTitle== "Product")
+    {
+            <link href="~/css/Admin/Teacher.css" rel="stylesheet" />
+
+    }
+    else if(pageTitle == "Course")
+    {
+                <link href="~/css/Admin/course.css" rel="stylesheet" />
+
+    }
+    else if (pageTitle == "Contact")
+    {
+        <link href="~/css/Admin/contact.css" rel="stylesheet" />
+
+    }
+    else if (pageTitle == "Feedback")
+    {
+        <link href="~/css/Admin/feedback.css" rel="stylesheet" />
+
+    }
+    else if (pageTitle == "AdminSetting")
+    {
+        <link href="~/css/Admin/setting.css" rel="stylesheet" />
+
+    }
+
+}
+
+
+
+
+<!-- NAVBAR -->
+<div class="container-fluid bg-dark text-white py-2">
+    <div class="row m-0">
+        <div class="col-md-12 d-flex align-items-center">
+            <button id="toggleAdminBtn" class="btn btn-outline-light me-3">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <h4 class="m-0"><a style="text-decoration:none;" class="text-white" asp-action="Index" asp-controller="Admin"><i class="fa fa-rocket"></i> Admin Dashboard</a></h4>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN AREA (SIDEBAR + CONTENT) -->
+<div class="row m-0">
+
+    <!-- SIDEBAR -->
+    <div id="sidebar" class="col-md-2">
+
+        <!-- Dashboard -->
+        <div class=" align-items-center px-3 mb-3">
+            <h5 class="mb-0">Menu</h5>
+        </div>
+        <ul class="list-unstyled">
+            <li><a asp-action="Index" asp-controller="Admin"><i class="bi bi-speedometer2 text-primary me-2"></i>Dashboard</a></li>
+            <li><a asp-action="Teacher" asp-controller="Admin"><i class="bi bi-kanban text-success me-2"></i>Teachers</a></li>
+            <li><a asp-action="Students" asp-controller="Admin"><i class="bi bi-people text-danger me-2"></i>Students</a></li>
+            <li><a asp-action="Course" asp-controller="Admin"><i class="bi bi-book text-warning me-2"></i>Courses</a></li>
+            <li><a asp-action="Product" asp-controller="Admin"><i class="bi bi-bag-check text-secondary me-2"></i>Products</a></li>
+            <li><a asp-action="Contact" asp-controller="Admin"><i class="bi bi-envelope text-info me-2"></i>Contacts</a></li>
+            <li><a asp-action="Feedback" asp-controller="Admin"><i class="bi bi-chat-dots text-primary me-2"></i>Feedback</a></li>
+        </ul>
+        <hr>
+        <ul class="list-unstyled">
+            <li><a asp-action="AdminSetting" asp-controller="Admin"><i class="bi bi-gear text-secondary me-2"></i>Account</a></li>
+            <li><a asp-action="Logout" asp-controller="Authentication"><i class="bi bi-box-arrow-right text-danger me-2"></i>Sign Out</a></li>
+        </ul>
+
+    </div>
+
+
+    <!-- CONTENT AREA -->
+    <div id="content" class="col-md-10 p-2">
+        @RenderBody()
+    </div>
+
+</div>
+
+@section Scripts{
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sidebar = document.getElementById("sidebar");
+        const content = document.getElementById("content");
+        const toggleAdminBtn = document.getElementById("toggleAdminBtn");
+
+        if (toggleAdminBtn && sidebar && content) {
+            toggleAdminBtn.addEventListener("click", () => {
+                sidebar.classList.toggle("collapsed");
+                content.classList.toggle("full");
+            });
+        }
+    });
+</script>
+}

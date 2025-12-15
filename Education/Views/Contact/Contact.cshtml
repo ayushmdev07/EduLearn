@@ -1,0 +1,113 @@
+﻿@model Education.Models.ContactClass
+@{
+    ViewData["Title"] = "Contact";
+}
+<!-- ✨ Main Contact Section -->
+<div class="contact-page" style="min-height:100vh; background: linear-gradient(135deg, #0a0f3d 45%, #ffffff 45%); display:flex; align-items:center; justify-content:center; padding:60px 0;">
+    <div class="container">
+        <div class="row align-items-center g-5">
+
+            <!-- 🎓 Left Section -->
+            <div class="col-lg-6 text-center">
+                <img src="~/GifFolder/contact us.gif" alt="Contact Animation" id="contact" class="img-fluid">
+
+
+                <h3 class="fw-bold text-white" style="mix-blend-mode:difference;">Let’s Learn & Connect!</h3>
+            </div>
+
+            <!-- 📬 Right Section -->
+            <div class="col-lg-6">
+                <div class="contact-form p-5 rounded-4 shadow-lg" style="background-color: white; border-left: 10px solid #0a0f3d;">
+                    <h2 class="fw-bold mb-4 text-center" style="color:#0a0f3d;">Contact Us</h2>
+
+                    @if (ViewBag.Success != null)
+                    {
+                        <div class="alert alert-success text-center">@ViewBag.Success</div>
+                    }
+
+                    <form method="post" asp-antiforgery="true">
+                        <div class="mb-3">
+                            <label asp-for="ContactEmail" class="form-label fw-bold" style="color:#0a0f3d;">Email</label>
+                            <input asp-for="ContactEmail" class="form-control shadow-sm" placeholder="Enter your email" />
+                            <span asp-validation-for="ContactEmail" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ContactMessage" class="form-label fw-bold" style="color:#0a0f3d;">Message</label>
+                            <textarea asp-for="ContactMessage" class="form-control shadow-sm" rows="4" placeholder="Write your message here..."></textarea>
+                            <span asp-validation-for="ContactMessage" class="text-danger"></span>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn px-5 py-2 text-white" style="background-color:#0a0f3d; border:none; border-radius:30px; font-weight:600; transition:0.3s;">
+                                Send Message ✈️
+                            </button>
+                        </div>
+
+
+                        <div class="text-center">
+                           @ViewBag.Msg
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- 💫 CSS Animations & Styles -->
+@section Styles {
+
+    <style>
+        @@keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #0a0f3d;
+            box-shadow: 0 0 10px rgba(10, 15, 61, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #132a74 !important;
+            transform: scale(1.05);
+        }
+
+
+        #contact {
+            height: auto;
+            width: 200px;
+            left: 50px;
+        }
+    </style>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // focus first invalid input
+        (function () {
+            const form = document.querySelector('form[asp-action="Index"]');
+            if (!form) return;
+            form.addEventListener('submit', function () {
+                setTimeout(function () {
+                    const invalid = document.querySelector('.input-validation-error');
+                    if (invalid) invalid.focus();
+                }, 10);
+            });
+        })();
+    </script>
+}

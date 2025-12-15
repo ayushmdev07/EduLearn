@@ -1,0 +1,150 @@
+﻿:root {
+    --bgh: rgb(148, 20, 42);
+}
+
+body {
+    background-image: linear-gradient(to right, #eaf9ff, #ecf8ff);
+}
+
+
+.bodyAbout .hero {
+    text-align: center;
+    padding: 100px 20px;
+    /* background : rgba(255, 255, 255, 0.05); */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    background-color: lightblue;
+    background-image: url("/images/home-images/education-bg.png");
+    background-repeat : repeat-x;
+    background-size: contain;
+}
+.bodyAbout #box h1, p{
+    padding: 5px 20px;
+    /*    border: 1px solid red;*/
+    display: inline-block;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 100, 0.1):
+}
+
+.bodyAbout .hero h1 {
+    font-weight: 700;
+    color: whitesmoke;
+    /*        background-color: #0e0e52;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;*/
+}
+
+    .bodyAbout .hero p {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        color: #0e2e44 !important;
+    }
+
+.highlight {
+    color: #00e0ff;
+    font-weight: 600;
+}
+
+.bodyAbout .section-title {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+.bodyAbout .card {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+}
+
+    .bodyAbout .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+.bodyAbout .btn-custom {
+    background-color: #0e0e11;
+    border: none;
+    font-weight: 600;
+    border-radius: 25px;
+    padding: 10px 25px;
+   
+    transition: all 0.3s ease;
+}
+
+    .bodyAbout .btn-custom:hover {
+
+        transform:scale(1.1)
+    }
+
+.bodyAbout .established {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 60px 20px;
+    border-radius: 15px;
+    margin-top: 80px;
+    text-align: center;
+}
+
+    .bodyAbout .established h2 {
+        font-weight: 700;
+    }
+
+.bodyAbout .testimonial-section {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.bodyAbout .testimonial-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+.bodyAbout .testimonial-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 3px solid #0e0e52;
+    ;
+}
+
+.bodyAbout .team-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0e0e52;
+    ;
+}
+
+.bodyAbout .team-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+    .bodyAbout .team-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+.bodyAbout footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.bodyAbout .clr {
+    color: darkblue;
+}
